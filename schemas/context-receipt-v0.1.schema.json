@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.org/context-receipt-v0.1.schema.json",
+  "$id": "https://raw.githubusercontent.com/chrisdstock/context-receipts/main/schemas/context-receipt-v0.1.schema.json",
   "title": "Context Receipt v0.1",
   "description": "A minimal receipt describing how context was selected, transformed, permissioned, constrained, and delivered to an LLM.",
   "type": "object",

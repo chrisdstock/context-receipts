@@ -1,0 +1,73 @@
+context_receipt:
+  schema_version: "0.1"
+  receipt_id: "cr_pause_2026_06_08_001"
+  timestamp: "2026-06-08T18:00:00Z"
+  source:
+    name: "Pause"
+    type: "app"
+    version: "0.1"
+  purpose: "acute_parenting_perspective_reset"
+  included_context:
+    - category: "current_incident_summary"
+      description: "User reported that their four-year-old said: 'I don't love you. I only love Mommy.'"
+      provenance: "user_provided"
+    - category: "child_age"
+      description: "Child age provided as four years old."
+      provenance: "user_provided"
+    - category: "user_reported_emotional_state"
+      description: "User reported feeling furious and hurt."
+      provenance: "user_provided"
+    - category: "selected_domain_policy"
+      description: "Acute parenting response policy selected by app."
+      provenance: "generated"
+  excluded_context:
+    - category: "child_name"
+      reason: "privacy"
+      description: "Child name was not required for response generation."
+    - category: "exact_prior_logs"
+      reason: "permission"
+      description: "User did not grant permission to review saved prior incidents."
+    - category: "custody_details"
+      reason: "relevance"
+      description: "Not required for the immediate acute parenting response."
+    - category: "location"
+      reason: "privacy"
+      description: "Location was not required for response generation."
+  transformations:
+    - type: "redacted"
+      description: "Names and identifying details were omitted."
+    - type: "summarized"
+      description: "Incident was summarized from user-provided natural language."
+    - type: "normalized"
+      description: "User state was categorized as an acute parenting activation moment."
+  permission_basis:
+    - basis: "user_prompt"
+      description: "User submitted the current incident for immediate assistance."
+    - basis: "user_setting"
+      description: "No prior-log review permission was enabled."
+  completeness:
+    status: "partial"
+    confidence: "medium"
+    notes: "Current incident only. Prior pattern history not included."
+  constraints:
+    - type: "domain"
+      description: "Do not diagnose the child."
+    - type: "domain"
+      description: "Do not assign motive with certainty."
+    - type: "output_format"
+      description: "Provide a short, actionable response and a possible script."
+    - type: "privacy"
+      description: "Do not save the interaction by default."
+    - type: "safety"
+      description: "Escalate if imminent harm, abuse, or emergency risk appears."
+  challenge_path:
+    model_may_request_more_context: true
+    user_permission_required: true
+    available_actions:
+      - "request_more_context"
+      - "request_user_clarification"
+      - "escalate_to_human"
+  audit:
+    trace_id: "trace_pause_abc123"
+    policy_version: "parenting_acute_v0.1"
+    retention_policy: "private_by_default_no_save_unless_user_opts_in"

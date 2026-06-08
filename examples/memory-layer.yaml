@@ -1,0 +1,56 @@
+context_receipt:
+  schema_version: "0.1"
+  receipt_id: "cr_memory_2026_06_08_001"
+  timestamp: "2026-06-08T18:10:00Z"
+  source:
+    name: "personal_memory_layer"
+    type: "memory"
+    version: "1.1"
+  purpose: "personalize_response"
+  included_context:
+    - category: "long_term_preference_summary"
+      description: "A summarized set of durable user preferences relevant to the current request."
+      provenance: "memory"
+    - category: "recent_project_summary"
+      description: "A summarized status of the user's recent project context."
+      provenance: "memory"
+  excluded_context:
+    - category: "raw_conversations"
+      reason: "privacy"
+      description: "Raw prior conversations were not included."
+    - category: "sensitive_memories"
+      reason: "policy"
+      description: "Memories marked sensitive were excluded from automatic personalization."
+    - category: "older_memories"
+      reason: "relevance"
+      description: "Memories older than the active relevance window were not retrieved."
+  transformations:
+    - type: "summarized"
+      description: "Raw prior interactions were compressed into a preference summary."
+    - type: "filtered"
+      description: "Sensitive and low-relevance memories were filtered out."
+    - type: "normalized"
+      description: "Memories were converted into concise model-readable context notes."
+  permission_basis:
+    - basis: "user_setting"
+      description: "User enabled personalization memory."
+  completeness:
+    status: "summarized"
+    confidence: "medium"
+    notes: "The model received a memory summary, not full prior conversation history."
+  constraints:
+    - type: "privacy"
+      description: "Do not reveal sensitive memory details directly."
+    - type: "instruction"
+      description: "Use memory only to personalize the current response."
+  challenge_path:
+    model_may_request_more_context: true
+    user_permission_required: true
+    available_actions:
+      - "request_user_clarification"
+      - "request_more_context"
+  audit:
+    trace_id: "trace_memory_xyz789"
+    policy_version: "memory_policy_v1.1"
+    retention_policy: "retain_receipt_without_raw_memory_content"
+    tool_version: "memory_layer_1.1"

@@ -1,0 +1,31 @@
+{
+  "name": "context-receipts",
+  "version": "0.0.1",
+  "description": "Experimental reference package for Context Receipt v0.1.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "schema.json",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "context",
+    "receipts",
+    "provenance",
+    "audit",
+    "schema"
+  ],
+  "author": "Chris Stock",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  }
+}

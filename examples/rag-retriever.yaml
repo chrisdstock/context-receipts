@@ -1,0 +1,55 @@
+context_receipt:
+  schema_version: "0.1"
+  receipt_id: "cr_rag_2026_06_08_001"
+  timestamp: "2026-06-08T18:05:00Z"
+  source:
+    name: "internal_knowledge_base_retriever"
+    type: "retriever"
+    version: "2.4"
+  purpose: "answer_customer_support_question"
+  included_context:
+    - category: "top_3_retrieved_chunks"
+      description: "The three highest-ranked chunks from the support knowledge base."
+      provenance: "retrieved"
+  excluded_context:
+    - category: "lower_ranked_chunks"
+      reason: "relevance"
+      description: "Chunks ranked below the top three were not included."
+    - category: "archived_policy_documents"
+      reason: "policy"
+      description: "Archived policy documents are excluded unless explicitly requested."
+    - category: "documents_outside_support_permission_scope"
+      reason: "permission"
+      description: "Documents outside the authenticated support scope were not searched."
+  transformations:
+    - type: "ranked"
+      description: "Semantic search ranked chunks by relevance to the support query."
+    - type: "filtered"
+      description: "Only documents in the active support knowledge base were eligible."
+    - type: "compressed"
+      description: "Chunks were trimmed to fit model context budget."
+  permission_basis:
+    - basis: "enterprise_policy"
+      description: "Authenticated support session grants access to active support knowledge base."
+  completeness:
+    status: "partial"
+    confidence: "medium"
+    notes: "Top-k retrieval result only, not the full knowledge base."
+  constraints:
+    - type: "instruction"
+      description: "Answer only from retrieved context."
+    - type: "instruction"
+      description: "Cite included sources when possible."
+    - type: "safety"
+      description: "If retrieved context appears insufficient, request additional retrieval."
+  challenge_path:
+    model_may_request_more_context: true
+    user_permission_required: false
+    available_actions:
+      - "request_more_context"
+      - "request_raw_source"
+  audit:
+    trace_id: "trace_rag_9281"
+    policy_version: "support_retrieval_v2.4"
+    retention_policy: "retain_trace_for_30_days"
+    tool_version: "retriever_2.4"

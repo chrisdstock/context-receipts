@@ -105,6 +105,14 @@ See [`SPEC.md`](./SPEC.md) for more detail and [`schemas/context-receipt-v0.1.sc
 
 ---
 
+## Related work
+
+Context Receipts build on provenance, lineage, observability, and AI transparency work, but focus specifically on the **context-shaping layer** between apps, tools, retrievers, memory systems, guardrails, workflows, and the model.
+
+See [`RELATED_WORK.md`](./RELATED_WORK.md) for how this proposal relates to route receipts, agent traces, context engineering, RAG provenance, W3C PROV, data lineage, model cards, system cards, AI Bills of Materials, and C2PA / Content Credentials.
+
+---
+
 ## Design principles
 
 ### Filtering is necessary. Hidden filtering is the problem.

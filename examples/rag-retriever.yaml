@@ -7,34 +7,130 @@ context_receipt:
     type: "retriever"
     version: "2.4"
   purpose: "answer_customer_support_question"
+  interaction:
+    user_query: "How do we rotate production API keys without downtime?"
+    retrieval_request:
+      query_text: "production API key rotation without downtime"
+      embedding_model: "text-embedding-3-large"
+      retrieval_strategy: "hybrid_semantic_keyword"
+      ranking_profile: "support_docs_v2"
+      requested_top_k: 8
+      delivered_top_k: 4
+      score_threshold: 0.74
+    corpus_scope:
+      searched:
+        - name: "support_knowledge_base"
+          version: "2026-06-07"
+          filters:
+            product_area: "developer_platform"
+            environment: "production"
+            locale: "en-US"
+        - name: "incident_runbooks"
+          version: "2026-05-28"
+          filters:
+            severity: ["sev1", "sev2"]
+            status: "active"
+      not_searched:
+        - name: "archived_support_articles"
+          reason: "archived documents are excluded by default"
+        - name: "private_customer_tickets"
+          reason: "current user does not have permission for customer-specific ticket bodies"
   included_context:
-    - category: "top_3_retrieved_chunks"
-      description: "The three highest-ranked chunks from the support knowledge base."
+    - category: "top_4_retrieved_chunks"
+      description: "The four highest-ranked chunks from support docs and incident runbooks."
       provenance: "retrieved"
+      chunks:
+        - source_id: "kb/api-key-rotation"
+          title: "API key rotation runbook"
+          rank: 1
+          relevance_score: 0.91
+          token_count: 310
+          content_summary: "Use overlapping keys, deploy the new key first, monitor dual-write success, then revoke the old key."
+        - source_id: "runbook/secrets-rollover"
+          title: "Secrets rollover checklist"
+          rank: 2
+          relevance_score: 0.88
+          token_count: 284
+          content_summary: "Checklist for staging, canary deployment, rollback window, and audit logging."
+        - source_id: "kb/client-cache-ttl"
+          title: "Client cache TTL behavior"
+          rank: 3
+          relevance_score: 0.81
+          token_count: 220
+          content_summary: "Clients may cache credentials for up to 15 minutes, so revocation should wait for the longest TTL."
+        - source_id: "runbook/credential-incident"
+          title: "Credential exposure incident notes"
+          rank: 4
+          relevance_score: 0.77
+          token_count: 260
+          content_summary: "Emergency rotation differs from planned rotation and may require immediate revocation."
+    - category: "retrieval_metadata"
+      description: "Non-content metadata describing the retrieval run, rankings, and filtering decisions."
+      provenance: "generated"
+      metadata:
+        trace_id: "trace_rag_9281"
+        query_id: "retrieval_query_2026_06_08_001"
+        reranker: "cross_encoder_support_v5"
+        ranking_cutoff_reason: "token_budget"
   excluded_context:
     - category: "lower_ranked_chunks"
       reason: "relevance"
-      description: "Chunks ranked below the top three were not included."
+      description: "Four relevant but lower-ranked chunks were omitted because the answer budget allowed only four chunks."
+      examples:
+        - source_id: "kb/api-key-audit-events"
+          rank: 5
+          relevance_score: 0.69
+          omission_note: "Useful for audit logging details, but not needed for the primary rotation sequence."
+        - source_id: "kb/sandbox-key-rotation"
+          rank: 6
+          relevance_score: 0.62
+          omission_note: "Sandbox-only guidance could confuse production instructions."
+    - category: "stale_documents"
+      reason: "policy"
+      description: "Documents older than the active support policy window were excluded before ranking."
+      examples:
+        - source_id: "kb/legacy-key-rotation-2024"
+          last_reviewed: "2024-11-12"
+          omission_note: "Superseded by the active API key rotation runbook."
     - category: "archived_policy_documents"
       reason: "policy"
       description: "Archived policy documents are excluded unless explicitly requested."
     - category: "documents_outside_support_permission_scope"
       reason: "permission"
       description: "Documents outside the authenticated support scope were not searched."
+    - category: "raw_vector_neighbors"
+      reason: "cost"
+      description: "The full vector-neighbor list was not sent to the model; only selected chunks and ranking metadata were included."
   transformations:
     - type: "ranked"
-      description: "Semantic search ranked chunks by relevance to the support query."
+      description: "Hybrid search ranked chunks with vector similarity, keyword match, recency, and source reliability signals."
+      inputs:
+        - "embedding_similarity"
+        - "keyword_overlap"
+        - "document_recency"
+        - "source_reliability"
     - type: "filtered"
       description: "Only documents in the active support knowledge base were eligible."
+      filter_summary: "Excluded archived, stale, private-ticket, and non-production documents before ranking."
     - type: "compressed"
-      description: "Chunks were trimmed to fit model context budget."
+      description: "Chunks were trimmed to fit the model context budget while preserving headings, warning blocks, and ordered steps."
+      before_tokens: 4680
+      after_tokens: 1074
+    - type: "normalized"
+      description: "Chunk metadata was normalized into source IDs, titles, ranks, scores, and content summaries."
   permission_basis:
     - basis: "enterprise_policy"
       description: "Authenticated support session grants access to active support knowledge base."
   completeness:
     status: "partial"
-    confidence: "medium"
-    notes: "Top-k retrieval result only, not the full knowledge base."
+    confidence: "high"
+    notes: "The answer is grounded in the top retrieved chunks from active support docs and runbooks. It is not a full corpus export, and omitted lower-ranked chunks may contain supporting audit-log details."
+    coverage:
+      searched_corpora_count: 2
+      excluded_corpora_count: 2
+      delivered_chunks: 4
+      omitted_candidate_chunks: 4
+      stale_documents_excluded: 1
   constraints:
     - type: "instruction"
       description: "Answer only from retrieved context."
@@ -42,14 +138,22 @@ context_receipt:
       description: "Cite included sources when possible."
     - type: "safety"
       description: "If retrieved context appears insufficient, request additional retrieval."
+    - type: "domain"
+      description: "Distinguish planned rotation from emergency credential exposure response."
   challenge_path:
     model_may_request_more_context: true
     user_permission_required: false
     available_actions:
       - "request_more_context"
       - "request_raw_source"
+      - "request_user_clarification"
+    suggested_follow_up_queries:
+      - "Retrieve audit logging details for API key rotation."
+      - "Retrieve emergency credential exposure procedures."
+      - "Search customer-specific tickets if the user grants permission."
   audit:
     trace_id: "trace_rag_9281"
     policy_version: "support_retrieval_v2.4"
     retention_policy: "retain_trace_for_30_days"
     tool_version: "retriever_2.4"
+    model_version: "support-answerer-2026-06"

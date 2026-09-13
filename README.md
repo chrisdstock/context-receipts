@@ -39,6 +39,7 @@ This demonstrates integration behavior; it does not measure model improvement.
 - [RAG](examples/v0.2/rag-retriever.json), [memory](examples/v0.2/memory-layer.json),
   [parenting](examples/v0.2/pause-parenting.json), and
   [downstream assembly](examples/v0.2/assembled-input.json) examples
+- [Detailed reproducible RAG fixture](examples/rag-detailed/README.md): corpus, stage accounting and packet
 - [Python helper](docs/PYTHON.md), [TypeScript package](packages/typescript/README.md), [tool integration](docs/INTEGRATION.md), and
   [evaluation plan](docs/EVALUATION.md)
 - [Privacy and threat model](docs/PRIVACY.md), [migration](docs/MIGRATION.md), and

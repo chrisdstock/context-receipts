@@ -19,6 +19,7 @@ jobs:
       - run: python -m unittest discover -s tests -v
       - run: python -m context_receipts examples/*.yaml examples/v0.2/*.json
       - run: python scripts/rag_demo.py
+      - run: python scripts/detailed_rag.py
   typescript:
     runs-on: ubuntu-latest
     strategy:

@@ -1,0 +1,115 @@
+{
+  "context_receipt": {
+    "schema_version": "0.2",
+    "receipt_id": "cr_maintenance_35abea4e0bfb98883f8387711ab8dd4003ff61151a9fb7a56815e8e8ad2faa01",
+    "timestamp": "2026-09-13T16:00:00Z",
+    "source": {
+      "name": "synthetic-maintenance-retriever",
+      "type": "retriever",
+      "version": "1"
+    },
+    "purpose": "What must I check before restarting the synthetic workshop ventilator?",
+    "audience": "model",
+    "assurance": "self_reported",
+    "binding": {
+      "packet_id": "maintenance-packet",
+      "revision": "35abea4e0bfb98883f8387711ab8dd4003ff61151a9fb7a56815e8e8ad2faa01",
+      "boundary": "tool_output",
+      "parent_receipt_ids": []
+    },
+    "included_context": {
+      "state": "disclosed",
+      "items": [
+        {
+          "category": "maintenance_guide_chunk",
+          "source_ref": "isolation@3",
+          "provenance": "retrieved"
+        },
+        {
+          "category": "maintenance_guide_chunk",
+          "source_ref": "inspection@2",
+          "provenance": "retrieved"
+        }
+      ]
+    },
+    "excluded_context": {
+      "state": "disclosed",
+      "items": [
+        {
+          "category": "lab_manuals",
+          "stage": "not_searched",
+          "reason": "permission"
+        },
+        {
+          "category": "retired_guides",
+          "stage": "filtered",
+          "reason": "policy"
+        },
+        {
+          "category": "below_threshold_chunks",
+          "stage": "ranked_not_selected",
+          "reason": "relevance"
+        },
+        {
+          "category": "qualifying_chunks_over_budget",
+          "stage": "delivery_omission",
+          "reason": "cost"
+        }
+      ]
+    },
+    "transformations": {
+      "state": "disclosed",
+      "items": [
+        {
+          "type": "filtered",
+          "description": "Only active guides are eligible."
+        },
+        {
+          "type": "ranked",
+          "description": "Fixed synthetic relevance scores descending; chunk ID breaks ties. Scores are not confidence."
+        },
+        {
+          "type": "normalized",
+          "description": "Trim leading and trailing whitespace; preserve each selected chunk otherwise."
+        }
+      ]
+    },
+    "permission_basis": {
+      "state": "disclosed",
+      "items": [
+        {
+          "basis": "user_setting",
+          "scope": "Published maintenance guides only; synthetic host policy."
+        }
+      ]
+    },
+    "coverage": {
+      "status": "partial",
+      "scope": "Published maintenance guides at 2026-09-13T16:00:00Z; lab manuals were not searched."
+    },
+    "freshness": "unknown",
+    "constraints": {
+      "state": "disclosed",
+      "items": [
+        {
+          "type": "domain",
+          "description": "Static synthetic snapshot; no observation of equipment state or later guide revisions."
+        }
+      ]
+    },
+    "challenge_path": {
+      "state": "disclosed",
+      "items": [
+        {
+          "id": "more_guides",
+          "type": "request_more_context",
+          "scope": "Published maintenance guides only",
+          "authorization": "existing_scope"
+        }
+      ]
+    },
+    "audit": {
+      "state": "withheld"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"calibration":false,"cli_version":"codex-cli 0.154.0","config":["model_reasoning_effort=\"low\"","features.shell_tool=false","web_search=\"disabled\"","project_doc_max_bytes=0"],"plan_sha256":"eabe58c082a2e5e3b6d8c5c91ec971ca57fb9cacf396f40b54fc43bc86a968da"}

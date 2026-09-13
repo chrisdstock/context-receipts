@@ -1,0 +1,1271 @@
+{
+  "kind": "post_run_synthetic_mcp_replay",
+  "plan_sha256": "eabe58c082a2e5e3b6d8c5c91ec971ca57fb9cacf396f40b54fc43bc86a968da",
+  "protocolVersion": "2025-11-25",
+  "initialization_tool_calls": 1,
+  "requested_followups": 115,
+  "executed_followups": 115,
+  "denied_followups": 0,
+  "trials": [
+    {
+      "case_id": "complete/injected/checked",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/injected/checked",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/injected/checked",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/injected/unavailable",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/injected/unavailable",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/injected/unavailable",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/misleading/checked",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/misleading/checked",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/misleading/checked",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/misleading/unavailable",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/misleading/unavailable",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/misleading/unavailable",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/none/checked",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/none/checked",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/none/checked",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/none/unavailable",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/none/unavailable",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/none/unavailable",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/partial/checked",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/partial/checked",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/partial/checked",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/partial/unavailable",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/partial/unavailable",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/partial/unavailable",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/scoped_full/checked",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/scoped_full/checked",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/scoped_full/checked",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/scoped_full/unavailable",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/scoped_full/unavailable",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "complete/scoped_full/unavailable",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "conflicting/injected/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/injected/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/injected/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/injected/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/injected/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/injected/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/misleading/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/misleading/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/misleading/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/misleading/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/misleading/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/misleading/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/none/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/none/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/none/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/none/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/none/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/none/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/partial/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/partial/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/partial/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/partial/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/partial/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/partial/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/scoped_full/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/scoped_full/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/scoped_full/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/scoped_full/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/scoped_full/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "conflicting/scoped_full/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/injected/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/injected/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/injected/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/injected/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/injected/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/injected/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/misleading/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/misleading/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/misleading/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/misleading/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/misleading/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/misleading/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/none/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/none/checked",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "missing/none/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/none/unavailable",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "missing/none/unavailable",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "missing/none/unavailable",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "missing/partial/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/partial/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/partial/checked",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "missing/partial/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/partial/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/partial/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/scoped_full/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/scoped_full/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/scoped_full/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/scoped_full/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/scoped_full/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "missing/scoped_full/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/injected/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/injected/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/injected/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/injected/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/injected/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/injected/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/misleading/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/misleading/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/misleading/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/misleading/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/misleading/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/misleading/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/none/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/none/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/none/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/none/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/none/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/none/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/partial/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/partial/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/partial/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/partial/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/partial/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/partial/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/scoped_full/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/scoped_full/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/scoped_full/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/scoped_full/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/scoped_full/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "stale/scoped_full/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/injected/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/injected/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/injected/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/injected/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/injected/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/injected/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/misleading/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/misleading/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/misleading/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/misleading/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/misleading/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/misleading/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/none/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/none/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/none/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/none/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/none/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/none/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/partial/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/partial/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/partial/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/partial/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/partial/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/partial/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/scoped_full/checked",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/scoped_full/checked",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/scoped_full/checked",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/scoped_full/unavailable",
+      "repeat": 0,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/scoped_full/unavailable",
+      "repeat": 1,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "summarized/scoped_full/unavailable",
+      "repeat": 2,
+      "requested": "more_guides",
+      "actual_tool_calls": 1,
+      "status": "verified_synthetic_fixture"
+    },
+    {
+      "case_id": "withheld/injected/checked",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/injected/checked",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/injected/checked",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/injected/unavailable",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/injected/unavailable",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/injected/unavailable",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/misleading/checked",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/misleading/checked",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/misleading/checked",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/misleading/unavailable",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/misleading/unavailable",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/misleading/unavailable",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/none/checked",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/none/checked",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/none/checked",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/none/unavailable",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/none/unavailable",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/none/unavailable",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/partial/checked",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/partial/checked",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/partial/checked",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/partial/unavailable",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/partial/unavailable",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/partial/unavailable",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/scoped_full/checked",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/scoped_full/checked",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/scoped_full/checked",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/scoped_full/unavailable",
+      "repeat": 0,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/scoped_full/unavailable",
+      "repeat": 1,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    },
+    {
+      "case_id": "withheld/scoped_full/unavailable",
+      "repeat": 2,
+      "requested": "none",
+      "actual_tool_calls": 0,
+      "status": "not_requested"
+    }
+  ]
+}

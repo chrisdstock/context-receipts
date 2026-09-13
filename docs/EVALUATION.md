@@ -13,7 +13,7 @@ that an LLM reasons better with receipts or detects dishonest issuers unaided.
 A compromised capture system can still lie; equality with a trusted record is only
 as trustworthy as that capture boundary.
 
-## Proposed model experiment (not run)
+## Initial experimental proposal (subsequently implemented)
 
 Hold task and supplied evidence constant; vary only an authorized receipt view:
 no receipt, accurate partial receipt, accurate full-scoped receipt, misleading
@@ -27,6 +27,18 @@ latency and receipt token overhead. Score a model's request separately from whet
 the host permits execution. Use fixed model/version and sampling settings, paired
 cases, repeated trials and uncertainty intervals. Retain only synthetic material.
 
-A successful result must show an improvement against the no-receipt baseline without
-raising privacy disclosure or authority-confusion rates. Schema pass counts are not
-substitutes for these behavioral outcomes. No benchmark result is claimed here.
+An effectiveness claim would require improvement against the no-receipt baseline
+without raising privacy disclosure or authority-confusion rates. Schema pass counts are not
+substitutes for these behavioral outcomes. A completed exploratory study may report null or negative results.
+
+## Recorded exploratory study
+
+The [September 13 Astra-in-Codex report](../evals/behavioral/runs/2026-09-13-astra/REPORT.md)
+contains 180 subscription-backed model trials, a frozen plan, raw synthetic responses
+and reproducible scoring. Readiness accuracy was already perfect without receipts;
+no accuracy gain was demonstrated. Follow-up changes were inconclusive, including
+the same increase for misleading receipts. Mean receipt overhead was about 500 input
+tokens. See the report for uncertainty, usage, environment and privacy limitations.
+
+The [evaluation harness](../evals/behavioral/README.md) documents batch checkpoints
+and safe resumption. CI validates the harness offline; it never launches model calls.

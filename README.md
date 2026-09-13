@@ -43,6 +43,7 @@ This demonstrates integration behavior; it does not measure model improvement.
 - [Python helper](docs/PYTHON.md), [TypeScript package](packages/typescript/README.md), [tool integration](docs/INTEGRATION.md), and
   [evaluation plan](docs/EVALUATION.md)
 - [Runnable synthetic MCP pilot](pilots/mcp/README.md): tool calls, model input and host permission checks
+- [Recorded behavioral evaluation](evals/behavioral/runs/2026-09-13-astra/REPORT.md): 180 trials, null accuracy result and measured overhead
 - [Privacy and threat model](docs/PRIVACY.md), [migration](docs/MIGRATION.md), and
   [related work](RELATED_WORK.md)
 - [Development decisions and open PR reconciliation](docs/DEVELOPMENT.md)

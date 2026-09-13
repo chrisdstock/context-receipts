@@ -75,3 +75,9 @@ class BehavioralTests(unittest.TestCase):
         with self.assertRaises(ValueError): ev.summarize(plan, bad)
         bad = deepcopy(rows); bad[0]['response'] = {}
         self.assertEqual(ev.summarize(plan, bad)['status'], 'inconclusive_protocol_failures')
+
+    def test_archived_report_reproduces_from_recorded_responses(self):
+        archive = DIR / 'runs/2026-09-13-astra'
+        plan = json.loads((archive / 'plan.json').read_text())
+        rows = [json.loads(line) for line in (archive / 'results.jsonl').read_text().splitlines()]
+        self.assertEqual(ev.summarize(plan, rows), json.loads((archive / 'report.json').read_text()))

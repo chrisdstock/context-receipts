@@ -1,0 +1,67 @@
+{
+  "context_receipt": {
+    "schema_version": "0.2",
+    "receipt_id": "cr_assembled",
+    "timestamp": "2026-09-13T16:00:00Z",
+    "source": {
+      "name": "assembled",
+      "type": "app"
+    },
+    "purpose": "describe_current_context",
+    "audience": "model",
+    "assurance": "self_reported",
+    "binding": {
+      "packet_id": "assembled_model_input",
+      "revision": "2",
+      "boundary": "model_input",
+      "parent_receipt_ids": [
+        "cr_rag"
+      ]
+    },
+    "included_context": {
+      "state": "disclosed",
+      "items": [
+        {
+          "category": "selected_tool_excerpt",
+          "provenance": "tool_output"
+        }
+      ]
+    },
+    "excluded_context": {
+      "state": "disclosed",
+      "items": [
+        {
+          "category": "tool_output_tail",
+          "stage": "delivery_omission",
+          "reason": "cost"
+        }
+      ]
+    },
+    "transformations": {
+      "state": "disclosed",
+      "items": [
+        {
+          "type": "compressed",
+          "description": "Host shortened tool output before constructing this model input."
+        }
+      ]
+    },
+    "permission_basis": {
+      "state": "unknown"
+    },
+    "coverage": {
+      "status": "partial",
+      "scope": "Tool packet packet_rag revision 1"
+    },
+    "freshness": "unknown",
+    "constraints": {
+      "state": "unknown"
+    },
+    "challenge_path": {
+      "state": "none"
+    },
+    "audit": {
+      "state": "withheld"
+    }
+  }
+}

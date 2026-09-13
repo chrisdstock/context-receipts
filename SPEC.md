@@ -7,13 +7,13 @@ standard, authorization token, proof of truth, or certificate of completeness.
 
 ## Conformance
 
-The [v0.2 JSON Schema](schemas/context-receipt-v0.2.schema.json) defines the wire
+The [v0.2 JSON Schema](context_receipts/schemas/context-receipt-v0.2.schema.json) defines the wire
 shape. Conforming producers MUST satisfy it and the semantic rules below.
 Consumers MUST enforce date-time formats and MUST reject unsupported versions.
 The Python and TypeScript helpers enforce the schema and local identity/action consistency.
 It cannot verify producer honesty, permissions, external references, or full lineage.
 
-The [v0.1 schema](schemas/context-receipt-v0.1.schema.json) remains unchanged.
+The [v0.1 schema](context_receipts/schemas/context-receipt-v0.1.schema.json) remains unchanged.
 [Its original proposal](docs/SPEC-v0.1.md) is historical. A v0.1 validation result
 MUST NOT be described as v0.2 conformance. See [migration](docs/MIGRATION.md).
 

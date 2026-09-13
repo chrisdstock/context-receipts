@@ -34,7 +34,7 @@ This demonstrates integration behavior; it does not measure model improvement.
 
 ## Read or build
 
-- [Specification](SPEC.md) and [v0.2 schema](schemas/context-receipt-v0.2.schema.json)
+- [Specification](SPEC.md) and [v0.2 schema](context_receipts/schemas/context-receipt-v0.2.schema.json)
 - [Minimal receipt](examples/v0.2/minimal.json): explicit unknowns, no fabricated detail
 - [RAG](examples/v0.2/rag-retriever.json), [memory](examples/v0.2/memory-layer.json),
   [parenting](examples/v0.2/pause-parenting.json), and

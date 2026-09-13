@@ -38,3 +38,9 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm test
       - run: npm run test:pack
+      - run: npm ci --ignore-scripts
+        working-directory: pilots/mcp
+      - run: npm test
+        working-directory: pilots/mcp
+      - run: npm run demo
+        working-directory: pilots/mcp

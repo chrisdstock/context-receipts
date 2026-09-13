@@ -28,3 +28,12 @@ The [synthetic RAG demo](../scripts/rag_demo.py) implements one small consumer p
 It does not call an external model or service, resolve receipt URLs, or access private
 files. [assembled-input.json](../examples/v0.2/assembled-input.json) illustrates the
 separate downstream boundary.
+
+## Runnable MCP pilot
+
+The [synthetic MCP pilot](../pilots/mcp/README.md) now exercises the official SDK's
+initialization, tool discovery and tool calls through an in-memory transport. It
+constructs an explicit model-input artifact, routes other audiences separately,
+creates downstream receipts and checks host scope before follow-up dispatch.
+Its fixed-fixture verification and offline transport are deliberately limited;
+it is not a production integration or a live-model evaluation.

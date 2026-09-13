@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "context-receipts"
+version = "0.2.0"
+description = "Schema-backed Context Receipt reference helpers"
+readme = "docs/PYTHON.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["context_receipts/LICENSE", "LICENSE"]
+authors = [{name = "Chris Stock and Context Receipts contributors"}]
+dependencies = [
+    "jsonschema==4.26.0",
+    "rfc3339-validator==0.1.4",
+    "PyYAML==6.0.3",
+    "typing-extensions>=4.4.0",
+]
+
+[tool.setuptools]
+packages = ["context_receipts", "context_receipts.schemas"]
+
+[tool.setuptools.package-data]
+context_receipts = ["schemas/*.json", "LICENSE", "py.typed"]

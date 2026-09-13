@@ -7,7 +7,8 @@ import tempfile
 import unittest
 
 from jsonschema import Draft202012Validator
-from context_receipts import create_context_receipt, get_schema, validate_context_receipt
+from context_receipts import (ContextReceiptBody, ContextReceiptInput,
+                              create_context_receipt, get_schema, validate_context_receipt)
 from context_receipts.__main__ import load_receipt
 from scripts.rag_demo import retrieve, decide
 
@@ -25,6 +26,13 @@ class ConformanceTests(unittest.TestCase):
             with self.subTest(path=path.name):
                 result = validate_context_receipt(load_receipt(path))
                 self.assertTrue(result.valid, result.errors)
+
+    def test_public_type_shapes_match_v02_top_level_contract(self):
+        required = set(get_schema('0.2')['properties']['context_receipt']['required'])
+        self.assertEqual(ContextReceiptBody.__required_keys__, required)
+        self.assertEqual(ContextReceiptBody.__optional_keys__, {'extensions'})
+        self.assertEqual(ContextReceiptInput.__required_keys__, set())
+        self.assertEqual(set(ContextReceiptInput.__optional_keys__), required | {'extensions'})
 
     def test_required_disclosures(self):
         for key in ('included_context','excluded_context','transformations','permission_basis',

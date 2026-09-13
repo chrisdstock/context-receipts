@@ -126,7 +126,7 @@ The system that selects context shapes the model’s reality. That power must be
 
 ## Proposed JSON shape
 
-See [`schemas/context-receipt-v0.1.schema.json`](../schemas/context-receipt-v0.1.schema.json).
+See [`schemas/context-receipt-v0.1.schema.json`](../context_receipts/schemas/context-receipt-v0.1.schema.json).
 
 ## Example receipts
 

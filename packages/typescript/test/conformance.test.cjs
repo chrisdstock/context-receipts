@@ -21,7 +21,7 @@ for (const item of suite.cases) {
 
 test('bundled schemas match canonical schemas', () => {
   for (const version of ['0.1', '0.2']) {
-    const canonical = JSON.parse(fs.readFileSync(path.join(root, `schemas/context-receipt-v${version}.schema.json`), 'utf8'));
+    const canonical = JSON.parse(fs.readFileSync(path.join(root, `context_receipts/schemas/context-receipt-v${version}.schema.json`), 'utf8'));
     assert.deepEqual(api.getSchema(version), canonical);
   }
 });

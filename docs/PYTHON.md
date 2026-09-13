@@ -1,8 +1,9 @@
 # Python reference helper
 
-This is a repository-local module, not a published or independently installable
-package. Run from the repository root after installing `requirements-dev.txt`.
-The canonical schemas live in `schemas/`; there is no handwritten second validator.
+This is an installable reference-helper package. Install it from a source checkout or
+an artifact built from one; publication to PyPI remains out of scope. The canonical
+schemas are bundled at `context_receipts/schemas/`; there is no handwritten second
+validator.
 
 ```python
 import json
@@ -24,9 +25,12 @@ version when absent. It requires all scope/disclosure decisions from the produce
 It does not generate an honest binding from thin air. `get_schema` supports v0.1 and
 v0.2 and returns fresh data; validation dispatches using the explicit version.
 `ValidationResult` is a frozen typed result with `valid` and `errors` fields. The
-wire data is JSON; there is no claim of a generated static type for every schema rule.
+`ContextReceipt`, `ContextReceiptBody`, and `ContextReceiptInput` expose the top-level
+v0.2 shape. Nested data remains JSON and is checked against the bundled canonical
+schema at runtime; there is no handwritten second validator.
 
 ```sh
+python -m pip install .
 python -m context_receipts examples/*.yaml examples/v0.2/*.json
 ```
 

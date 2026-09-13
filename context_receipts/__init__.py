@@ -2,13 +2,14 @@
 from copy import deepcopy
 from dataclasses import dataclass
 from datetime import datetime, timezone
+from importlib.resources import files
 import json
-from pathlib import Path
-from typing import Any, Mapping
+from typing import Any, TypeAlias, TypedDict, cast
 from uuid import uuid4
 
 from jsonschema import Draft202012Validator, FormatChecker
 from rfc3339_validator import validate_rfc3339
+from typing_extensions import NotRequired
 
 FORMAT_CHECKER = FormatChecker()
 
@@ -17,7 +18,55 @@ FORMAT_CHECKER = FormatChecker()
 def _date_time(value):
     return not isinstance(value, str) or (value == value.strip() and bool(validate_rfc3339(value.upper())))
 
-SCHEMA_DIR = Path(__file__).resolve().parent.parent / 'schemas'
+JSONValue: TypeAlias = str | int | float | bool | None | list['JSONValue'] | dict[str, 'JSONValue']
+
+
+class ContextReceiptBody(TypedDict):
+    """The required v0.2 receipt fields; nested values remain schema-validated JSON."""
+    schema_version: str
+    receipt_id: str
+    timestamp: str
+    source: JSONValue
+    purpose: str
+    audience: JSONValue
+    assurance: str
+    binding: JSONValue
+    included_context: JSONValue
+    excluded_context: JSONValue
+    transformations: JSONValue
+    permission_basis: JSONValue
+    coverage: JSONValue
+    freshness: str
+    constraints: JSONValue
+    challenge_path: JSONValue
+    audit: JSONValue
+    extensions: NotRequired[JSONValue]
+
+
+class ContextReceiptInput(TypedDict, total=False):
+    """v0.2 constructor input; schema_version, receipt_id, and timestamp may be omitted."""
+    schema_version: str
+    receipt_id: str
+    timestamp: str
+    source: JSONValue
+    purpose: str
+    audience: JSONValue
+    assurance: str
+    binding: JSONValue
+    included_context: JSONValue
+    excluded_context: JSONValue
+    transformations: JSONValue
+    permission_basis: JSONValue
+    coverage: JSONValue
+    freshness: str
+    constraints: JSONValue
+    challenge_path: JSONValue
+    audit: JSONValue
+    extensions: JSONValue
+
+
+class ContextReceipt(TypedDict):
+    context_receipt: ContextReceiptBody
 
 
 @dataclass(frozen=True)
@@ -30,7 +79,8 @@ def get_schema(version: str = '0.2') -> dict[str, Any]:
     """Return a fresh local schema. Never resolve a caller-supplied schema URL."""
     if version not in ('0.1', '0.2'):
         raise ValueError('Unsupported receipt version')
-    return json.loads((SCHEMA_DIR / f'context-receipt-v{version}.schema.json').read_text())
+    schema = files('context_receipts').joinpath('schemas', f'context-receipt-v{version}.schema.json')
+    return json.loads(schema.read_text(encoding='utf-8'))
 
 
 def validate_context_receipt(receipt: Any) -> ValidationResult:
@@ -61,7 +111,7 @@ def validate_context_receipt(receipt: Any) -> ValidationResult:
     return ValidationResult(not errors, tuple(errors))
 
 
-def create_context_receipt(input: Mapping[str, Any]) -> dict[str, Any]:
+def create_context_receipt(input: ContextReceiptInput) -> ContextReceipt:
     """Create v0.2 metadata; all disclosures must be supplied, never guessed."""
     body = deepcopy(dict(input))
     body.setdefault('schema_version', '0.2')
@@ -69,7 +119,7 @@ def create_context_receipt(input: Mapping[str, Any]) -> dict[str, Any]:
         raise ValueError('Creation supports v0.2 only')
     body.setdefault('receipt_id', str(uuid4()))
     body.setdefault('timestamp', datetime.now(timezone.utc).isoformat())
-    receipt = {'context_receipt': body}
+    receipt = cast(ContextReceipt, {'context_receipt': body})
     result = validate_context_receipt(receipt)
     if not result.valid:
         raise ValueError('; '.join(result.errors))

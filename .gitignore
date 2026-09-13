@@ -1,3 +1,7 @@
 .venv/
 __pycache__/
 *.py[cod]
+node_modules/
+packages/typescript/dist/
+packages/typescript/src/generated-schemas.ts
+*.tgz

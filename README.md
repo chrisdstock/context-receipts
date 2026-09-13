@@ -7,7 +7,7 @@ retrieved documents, memory summaries, tool results, redactions, and instruction
 A Context Receipt makes those selection decisions inspectable without copying the
 underlying private content.
 
-**Status: v0.2 draft, with a repository-local Python reference helper.** No package
+**Status: v0.2 draft, with Python and TypeScript reference helpers.** No package
 release or production integration is claimed. The original v0.1 schema is retained.
 
 A receipt reports what was included, excluded, transformed, and permissioned; where
@@ -39,7 +39,7 @@ This demonstrates integration behavior; it does not measure model improvement.
 - [RAG](examples/v0.2/rag-retriever.json), [memory](examples/v0.2/memory-layer.json),
   [parenting](examples/v0.2/pause-parenting.json), and
   [downstream assembly](examples/v0.2/assembled-input.json) examples
-- [Python helper](docs/PYTHON.md), [tool integration](docs/INTEGRATION.md), and
+- [Python helper](docs/PYTHON.md), [TypeScript package](packages/typescript/README.md), [tool integration](docs/INTEGRATION.md), and
   [evaluation plan](docs/EVALUATION.md)
 - [Privacy and threat model](docs/PRIVACY.md), [migration](docs/MIGRATION.md), and
   [related work](RELATED_WORK.md)

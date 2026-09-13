@@ -10,3 +10,10 @@
 - Add synthetic examples, a deterministic host demo, privacy/consumer guidance and
   a model-evaluation plan with no unmeasured performance claims.
 - Reconcile open issues and PRs without changing their hosted state or license terms.
+
+### PR resolution follow-up
+
+- Adopt explicit CC0 specification / MIT reference-code licensing with a documented
+  exception for the third-party-derived legacy RAG example.
+- Add a TypeScript package backed by canonical schemas and shared conformance cases,
+  with type tests, Node CI, and packed-consumer verification. No npm release is made.

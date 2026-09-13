@@ -1,0 +1,16 @@
+{
+  "query": "What must I check before restarting the synthetic workshop ventilator?",
+  "snapshot": "2026-09-13T16:00:00Z",
+  "searched_corpora": ["published-guides"],
+  "unsearched_corpora": ["lab-manuals"],
+  "threshold": 0.6,
+  "chunk_budget": 2,
+  "chunks": [
+    {"id": "isolation", "revision": "3", "corpus": "published-guides", "status": "active", "score": 0.95, "text": "  Confirm that maintenance is complete and all guards are installed.\n"},
+    {"id": "inspection", "revision": "2", "corpus": "published-guides", "status": "active", "score": 0.85, "text": "Inspect the intake for obstructions before restarting."},
+    {"id": "clearance", "revision": "4", "corpus": "published-guides", "status": "active", "score": 0.75, "text": "Obtain the workshop supervisor's clearance before restarting."},
+    {"id": "paint", "revision": "1", "corpus": "published-guides", "status": "active", "score": 0.2, "text": "The enclosure is painted blue."},
+    {"id": "old-start", "revision": "1", "corpus": "published-guides", "status": "retired", "score": 0.99, "text": "Legacy instructions omitted supervisor clearance; this guide is retired."},
+    {"id": "lab-prototype", "revision": "1", "corpus": "lab-manuals", "status": "active", "score": 1.0, "text": "Prototype laboratory procedures apply only to laboratory equipment."}
+  ]
+}

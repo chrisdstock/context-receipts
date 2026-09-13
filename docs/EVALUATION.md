@@ -42,3 +42,7 @@ tokens. See the report for uncertainty, usage, environment and privacy limitatio
 
 The [evaluation harness](../evals/behavioral/README.md) documents batch checkpoints
 and safe resumption. CI validates the harness offline; it never launches model calls.
+
+The [minimum receipt decision](MINIMUM_RECEIPT.md) applies these findings to #6:
+retain the v0.2 core pending field-level and independent-adopter evidence, with
+reproducible byte measurements and the observed token overhead.

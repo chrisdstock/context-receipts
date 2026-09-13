@@ -1,0 +1,78 @@
+{
+  "context_receipt": {
+    "schema_version": "0.2",
+    "receipt_id": "cr_parenting",
+    "timestamp": "2026-09-13T16:00:00Z",
+    "source": {
+      "name": "parenting",
+      "type": "app"
+    },
+    "purpose": "describe_current_context",
+    "audience": "model",
+    "assurance": "self_reported",
+    "binding": {
+      "packet_id": "packet_parenting",
+      "revision": "1",
+      "boundary": "tool_output",
+      "parent_receipt_ids": []
+    },
+    "included_context": {
+      "state": "disclosed",
+      "items": [
+        {
+          "category": "current_request",
+          "provenance": "user_provided"
+        }
+      ]
+    },
+    "excluded_context": {
+      "state": "withheld"
+    },
+    "transformations": {
+      "state": "disclosed",
+      "items": [
+        {
+          "type": "summarized",
+          "description": "Current request summarized without reproducing content here."
+        }
+      ]
+    },
+    "permission_basis": {
+      "state": "disclosed",
+      "items": [
+        {
+          "basis": "user_prompt",
+          "scope": "Assistance with current request only"
+        }
+      ]
+    },
+    "coverage": {
+      "status": "partial",
+      "scope": "Current request only"
+    },
+    "freshness": "current",
+    "constraints": {
+      "state": "disclosed",
+      "items": [
+        {
+          "type": "privacy",
+          "description": "Host policy prohibits saving the underlying interaction by default."
+        }
+      ]
+    },
+    "challenge_path": {
+      "state": "disclosed",
+      "items": [
+        {
+          "id": "clarify",
+          "type": "request_user_clarification",
+          "scope": "Current request",
+          "authorization": "existing_scope"
+        }
+      ]
+    },
+    "audit": {
+      "state": "withheld"
+    }
+  }
+}

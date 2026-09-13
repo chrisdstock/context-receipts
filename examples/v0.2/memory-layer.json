@@ -1,0 +1,72 @@
+{
+  "context_receipt": {
+    "schema_version": "0.2",
+    "receipt_id": "cr_memory",
+    "timestamp": "2026-09-13T16:00:00Z",
+    "source": {
+      "name": "memory",
+      "type": "memory"
+    },
+    "purpose": "describe_current_context",
+    "audience": "model",
+    "assurance": "self_reported",
+    "binding": {
+      "packet_id": "packet_memory",
+      "revision": "1",
+      "boundary": "tool_output",
+      "parent_receipt_ids": []
+    },
+    "included_context": {
+      "state": "disclosed",
+      "items": [
+        {
+          "category": "preference_summary",
+          "provenance": "memory"
+        }
+      ]
+    },
+    "excluded_context": {
+      "state": "withheld"
+    },
+    "transformations": {
+      "state": "disclosed",
+      "items": [
+        {
+          "type": "summarized",
+          "description": "Selected history compressed to a preference summary."
+        }
+      ]
+    },
+    "permission_basis": {
+      "state": "disclosed",
+      "items": [
+        {
+          "basis": "user_setting",
+          "scope": "Personalization for the current request"
+        }
+      ]
+    },
+    "coverage": {
+      "status": "partial",
+      "scope": "User-authorized personalization history"
+    },
+    "freshness": "stale",
+    "constraints": {
+      "state": "unknown"
+    },
+    "challenge_path": {
+      "state": "disclosed",
+      "items": [
+        {
+          "id": "clarify",
+          "type": "request_user_clarification",
+          "scope": "Current preferences",
+          "authorization": "existing_scope"
+        }
+      ]
+    },
+    "audit": {
+      "state": "withheld"
+    }
+  }
+}

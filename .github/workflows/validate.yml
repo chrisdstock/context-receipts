@@ -44,3 +44,7 @@ jobs:
         working-directory: pilots/mcp
       - run: npm run demo
         working-directory: pilots/mcp
+      - run: node replay-evaluation.mjs ../../evals/behavioral/runs/2026-09-13-astra/plan.json ../../evals/behavioral/runs/2026-09-13-astra/results.jsonl /tmp/host-replay.json
+        working-directory: pilots/mcp
+      - run: cmp /tmp/host-replay.json ../../evals/behavioral/runs/2026-09-13-astra/host-replay.json
+        working-directory: pilots/mcp

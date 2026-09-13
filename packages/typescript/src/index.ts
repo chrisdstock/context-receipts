@@ -21,7 +21,7 @@ addFormats(ajv);
 // rejection of leap-second literals. This is a format adapter, not a schema copy.
 ajv.addFormat('date-time', (value: string) => {
   const m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.\d+)?(?:Z|([+-])(\d{2}):(\d{2}))$/i.exec(value);
-  if (!m) return false;
+  if (!m || m[0] !== value) return false;
   const [year, month, day, hour, minute, second] = m.slice(1, 7).map(Number);
   const leap = year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
   const days = [31, leap ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];

@@ -15,7 +15,7 @@ FORMAT_CHECKER = FormatChecker()
 
 @FORMAT_CHECKER.checks("date-time")
 def _date_time(value):
-    return not isinstance(value, str) or bool(validate_rfc3339(value.upper()))
+    return not isinstance(value, str) or (value == value.strip() and bool(validate_rfc3339(value.upper())))
 
 SCHEMA_DIR = Path(__file__).resolve().parent.parent / 'schemas'
 

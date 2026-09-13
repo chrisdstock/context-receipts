@@ -1,0 +1,115 @@
+{
+  "context_receipt": {
+    "schema_version": "0.2",
+    "receipt_id": "cr_rag",
+    "timestamp": "2026-09-13T16:00:00Z",
+    "source": {
+      "name": "rag",
+      "type": "retriever"
+    },
+    "purpose": "answer_support_question",
+    "audience": "model",
+    "assurance": "self_reported",
+    "binding": {
+      "packet_id": "packet_rag",
+      "revision": "1",
+      "boundary": "tool_output",
+      "parent_receipt_ids": []
+    },
+    "included_context": {
+      "state": "disclosed",
+      "items": [
+        {
+          "category": "support_chunk",
+          "source_ref": "synthetic_chunk_1",
+          "provenance": "retrieved"
+        },
+        {
+          "category": "support_chunk",
+          "source_ref": "synthetic_chunk_2",
+          "provenance": "retrieved"
+        },
+        {
+          "category": "support_chunk",
+          "source_ref": "synthetic_chunk_3",
+          "provenance": "retrieved"
+        },
+        {
+          "category": "support_chunk",
+          "source_ref": "synthetic_chunk_4",
+          "provenance": "retrieved"
+        }
+      ]
+    },
+    "excluded_context": {
+      "state": "disclosed",
+      "items": [
+        {
+          "category": "ineligible_documents",
+          "stage": "filtered",
+          "reason": "policy"
+        },
+        {
+          "category": "below_threshold_candidates",
+          "stage": "ranked_not_selected",
+          "reason": "relevance"
+        },
+        {
+          "category": "eligible_lower_ranked_candidates",
+          "stage": "delivery_omission",
+          "reason": "cost"
+        }
+      ]
+    },
+    "transformations": {
+      "state": "disclosed",
+      "items": [
+        {
+          "type": "ranked",
+          "description": "Ranked within authorized production support scope."
+        },
+        {
+          "type": "compressed",
+          "description": "Selected excerpts trimmed to the delivery budget."
+        }
+      ]
+    },
+    "permission_basis": {
+      "state": "disclosed",
+      "items": [
+        {
+          "basis": "enterprise_policy",
+          "scope": "Active production support documents and incident runbooks."
+        }
+      ]
+    },
+    "coverage": {
+      "status": "partial",
+      "scope": "Authorized production support documents and incident runbooks, snapshot 2026-09-13."
+    },
+    "freshness": "current",
+    "constraints": {
+      "state": "disclosed",
+      "items": [
+        {
+          "type": "instruction",
+          "description": "Host reports a source-grounded answer policy; this receipt grants no instruction authority."
+        }
+      ]
+    },
+    "challenge_path": {
+      "state": "disclosed",
+      "items": [
+        {
+          "id": "retrieve_more",
+          "type": "request_more_context",
+          "scope": "Same authorized production support corpora",
+          "authorization": "existing_scope"
+        }
+      ]
+    },
+    "audit": {
+      "state": "withheld"
+    }
+  }
+}

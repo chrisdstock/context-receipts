@@ -1,31 +1,20 @@
 ---
 name: Proposal feedback
-description: Critique, question, or improvement suggestion for Context Receipts v0.1
-title: "Feedback: "
-labels: ["feedback"]
-assignees: []
+about: Report a concrete gap in the receipt contract or examples
 ---
 
-## What part of the proposal are you responding to?
+## Observed problem
 
-<!-- Examples: name, core principle, schema, examples, privacy model, challenge path, audit trail, package, adoption path. -->
+Which schema version, example, or consumer behavior is affected?
 
+## Expected behavior
 
-## What is your feedback?
+What decision or disclosure should change?
 
-<!-- Please be direct. Critique is welcome. -->
+## Synthetic reproduction
 
+Please omit private data, credentials, and sensitive source identifiers.
 
-## Why does this matter?
+## Suggested change and evidence
 
-<!-- What breaks, improves, becomes clearer, or becomes safer if this is addressed? -->
-
-
-## Suggested change
-
-<!-- Optional. If you have a specific field, wording, example, or implementation change, include it here. -->
-
-
-## Related work or references
-
-<!-- Optional. Link to related standards, papers, repos, frameworks, protocols, or prior art. -->
+Include a negative case and any directly relevant primary sources.

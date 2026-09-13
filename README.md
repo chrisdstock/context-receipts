@@ -42,6 +42,7 @@ This demonstrates integration behavior; it does not measure model improvement.
 - [Detailed reproducible RAG fixture](examples/rag-detailed/README.md): corpus, stage accounting and packet
 - [Python helper](docs/PYTHON.md), [TypeScript package](packages/typescript/README.md), [tool integration](docs/INTEGRATION.md), and
   [evaluation plan](docs/EVALUATION.md)
+- [Runnable synthetic MCP pilot](pilots/mcp/README.md): tool calls, model input and host permission checks
 - [Privacy and threat model](docs/PRIVACY.md), [migration](docs/MIGRATION.md), and
   [related work](RELATED_WORK.md)
 - [Development decisions and open PR reconciliation](docs/DEVELOPMENT.md)

@@ -1,0 +1,10 @@
+{
+  "name": "context-receipts-mcp-pilot",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {"node": ">=22"},
+  "scripts": {"test": "node --test pilot.test.mjs", "demo": "node demo.mjs"},
+  "dependencies": {"@modelcontextprotocol/sdk": "1.30.0"}
+}

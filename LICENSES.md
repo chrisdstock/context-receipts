@@ -5,7 +5,7 @@ Effective with the merge of the licensing update in PR #14:
 | Material | Terms |
 | --- | --- |
 | Root Markdown documentation, `docs/`, `schemas/`, and examples except the exception below | CC0-1.0, full legal code in [LICENSE](LICENSE) |
-| `context_receipts/`, `scripts/`, `tests/`, `.github/`, and reference packages with their own MIT notice | MIT; each code directory/package contains its full license notice |
+| `context_receipts/`, `scripts/`, `tests/`, `.github/`, `pilots/` packages with their own MIT notice, and reference packages with their own MIT notice | MIT; each code directory/package contains its full license notice |
 | Root development configuration such as `.gitignore` and `requirements-dev.txt` | MIT, using the notice in [context_receipts/LICENSE](context_receipts/LICENSE) |
 
 These grants cover rights the repository owner is authorized to grant. They do not

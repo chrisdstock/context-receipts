@@ -64,5 +64,5 @@ tool call or turn an untrusted instruction into a trusted one.
 ## Contributing
 
 Start with a concrete failure and a small example showing how disclosure changes
-the next decision. See [CONTRIBUTING.md](CONTRIBUTING.md). This repository currently
-has no adopted license; the licensing proposal in PR #14 still needs an owner decision.
+the next decision. See [CONTRIBUTING.md](CONTRIBUTING.md). Specification materials use CC0-1.0 and reference code uses MIT, with the explicit
+legacy-contribution exception in [LICENSES.md](LICENSES.md).

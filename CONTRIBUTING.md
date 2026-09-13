@@ -17,5 +17,6 @@ Additional language helpers should share positive and negative conformance cases
 Keep the core small; use documented extensions for domain-specific experiments.
 
 Do not claim benchmark improvement from schema validation or the deterministic demo.
-The repository has no adopted license yet; PR #14 proposes licensing and requires
-an owner decision. This contribution guide does not introduce license terms.
+Use the applicable terms in [LICENSES.md](LICENSES.md) for new contributions and
+confirm that you have the rights to submit them. Third-party material must retain
+its notices and any separate terms; do not assume this policy relicenses older contributions.

@@ -56,3 +56,11 @@ silent format acceptance. The helper now requires and explicitly registers that 
 Positive v0.1 validation is intentionally still permissive. v0.2 is not an automated
 privacy scanner, proof of completeness, or a full graph validator. Hosted CI is configured for the publication review. Local results alone do not establish
 that the hosted matrix has passed; use the checks on the current PR head.
+
+## PR resolution follow-up
+
+PR #16 was closed as incorporated into #17, with thanks and attribution. PR #14 is
+now limited to explicit license coverage: CC0 specification materials and MIT code.
+The third-party-derived legacy RAG example is excluded pending verified reuse terms;
+the new v0.2 example remains available under CC0. This supersedes the earlier
+license-pending entries in this historical ledger.

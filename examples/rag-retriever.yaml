@@ -1,3 +1,4 @@
+# License exception: see ../LICENSES.md; third-party-derived legacy example.
 # Synthetic developer-view illustration. Extra v0.1 fields are not schema-validated.
 context_receipt:
   schema_version: "0.1"

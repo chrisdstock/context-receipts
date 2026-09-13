@@ -1,0 +1,1005 @@
+{
+  "bases": {
+    "v02": {
+      "context_receipt": {
+        "schema_version": "0.2",
+        "receipt_id": "cr_rag",
+        "timestamp": "2026-09-13T16:00:00Z",
+        "source": {
+          "name": "rag",
+          "type": "retriever"
+        },
+        "purpose": "answer_support_question",
+        "audience": "model",
+        "assurance": "self_reported",
+        "binding": {
+          "packet_id": "packet_rag",
+          "revision": "1",
+          "boundary": "tool_output",
+          "parent_receipt_ids": []
+        },
+        "included_context": {
+          "state": "disclosed",
+          "items": [
+            {
+              "category": "support_chunk",
+              "source_ref": "synthetic_chunk_1",
+              "provenance": "retrieved"
+            },
+            {
+              "category": "support_chunk",
+              "source_ref": "synthetic_chunk_2",
+              "provenance": "retrieved"
+            },
+            {
+              "category": "support_chunk",
+              "source_ref": "synthetic_chunk_3",
+              "provenance": "retrieved"
+            },
+            {
+              "category": "support_chunk",
+              "source_ref": "synthetic_chunk_4",
+              "provenance": "retrieved"
+            }
+          ]
+        },
+        "excluded_context": {
+          "state": "disclosed",
+          "items": [
+            {
+              "category": "ineligible_documents",
+              "stage": "filtered",
+              "reason": "policy"
+            },
+            {
+              "category": "below_threshold_candidates",
+              "stage": "ranked_not_selected",
+              "reason": "relevance"
+            },
+            {
+              "category": "eligible_lower_ranked_candidates",
+              "stage": "delivery_omission",
+              "reason": "cost"
+            }
+          ]
+        },
+        "transformations": {
+          "state": "disclosed",
+          "items": [
+            {
+              "type": "ranked",
+              "description": "Ranked within authorized production support scope."
+            },
+            {
+              "type": "compressed",
+              "description": "Selected excerpts trimmed to the delivery budget."
+            }
+          ]
+        },
+        "permission_basis": {
+          "state": "disclosed",
+          "items": [
+            {
+              "basis": "enterprise_policy",
+              "scope": "Active production support documents and incident runbooks."
+            }
+          ]
+        },
+        "coverage": {
+          "status": "partial",
+          "scope": "Authorized production support documents and incident runbooks, snapshot 2026-09-13."
+        },
+        "freshness": "current",
+        "constraints": {
+          "state": "disclosed",
+          "items": [
+            {
+              "type": "instruction",
+              "description": "Host reports a source-grounded answer policy; this receipt grants no instruction authority."
+            }
+          ]
+        },
+        "challenge_path": {
+          "state": "disclosed",
+          "items": [
+            {
+              "id": "retrieve_more",
+              "type": "request_more_context",
+              "scope": "Same authorized production support corpora",
+              "authorization": "existing_scope"
+            }
+          ]
+        },
+        "audit": {
+          "state": "withheld"
+        }
+      }
+    },
+    "v01": {
+      "context_receipt": {
+        "schema_version": "0.1",
+        "receipt_id": "legacy",
+        "timestamp": "2026-09-13T16:00:00Z",
+        "source": {
+          "name": "legacy",
+          "type": "tool"
+        },
+        "purpose": "test",
+        "included_context": [],
+        "completeness": {
+          "status": "full"
+        }
+      }
+    }
+  },
+  "cases": [
+    {
+      "name": "valid-v02",
+      "base": "v02",
+      "valid": true,
+      "operations": []
+    },
+    {
+      "name": "legacy-remains-valid",
+      "base": "v01",
+      "valid": true,
+      "operations": []
+    },
+    {
+      "name": "missing-included_context",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "remove",
+          "path": [
+            "context_receipt",
+            "included_context"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "missing-excluded_context",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "remove",
+          "path": [
+            "context_receipt",
+            "excluded_context"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "missing-transformations",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "remove",
+          "path": [
+            "context_receipt",
+            "transformations"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "missing-permission_basis",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "remove",
+          "path": [
+            "context_receipt",
+            "permission_basis"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "missing-constraints",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "remove",
+          "path": [
+            "context_receipt",
+            "constraints"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "missing-challenge_path",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "remove",
+          "path": [
+            "context_receipt",
+            "challenge_path"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "missing-audit",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "remove",
+          "path": [
+            "context_receipt",
+            "audit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "missing-binding",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "remove",
+          "path": [
+            "context_receipt",
+            "binding"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "missing-audience",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "remove",
+          "path": [
+            "context_receipt",
+            "audience"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "missing-coverage",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "remove",
+          "path": [
+            "context_receipt",
+            "coverage"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "missing-freshness",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "remove",
+          "path": [
+            "context_receipt",
+            "freshness"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "blank-receipt_id",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "receipt_id"
+          ],
+          "value": "  "
+        }
+      ]
+    },
+    {
+      "name": "blank-purpose",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "purpose"
+          ],
+          "value": "  "
+        }
+      ]
+    },
+    {
+      "name": "blank-source/name",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "source",
+            "name"
+          ],
+          "value": "  "
+        }
+      ]
+    },
+    {
+      "name": "blank-binding/packet_id",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "binding",
+            "packet_id"
+          ],
+          "value": "  "
+        }
+      ]
+    },
+    {
+      "name": "blank-binding/revision",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "binding",
+            "revision"
+          ],
+          "value": "  "
+        }
+      ]
+    },
+    {
+      "name": "invalid-date-yesterday",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "timestamp"
+          ],
+          "value": "yesterday"
+        }
+      ]
+    },
+    {
+      "name": "invalid-date-2026-02-30T00:00:00Z",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "timestamp"
+          ],
+          "value": "2026-02-30T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "name": "invalid-date-2026-09-13",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "timestamp"
+          ],
+          "value": "2026-09-13"
+        }
+      ]
+    },
+    {
+      "name": "invalid-date-2026-09-13T16:00:60Z",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "timestamp"
+          ],
+          "value": "2026-09-13T16:00:60Z"
+        }
+      ]
+    },
+    {
+      "name": "invalid-date-0000-01-01T00:00:00Z",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "timestamp"
+          ],
+          "value": "0000-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "name": "invalid-date-2026-01-01T25:00:00Z",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "timestamp"
+          ],
+          "value": "2026-01-01T25:00:00Z"
+        }
+      ]
+    },
+    {
+      "name": "invalid-date-2026-01-01T00:00:00+24:00",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "timestamp"
+          ],
+          "value": "2026-01-01T00:00:00+24:00"
+        }
+      ]
+    },
+    {
+      "name": "valid-date-2024-02-29T23:59:59.123Z",
+      "base": "v02",
+      "valid": true,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "timestamp"
+          ],
+          "value": "2024-02-29T23:59:59.123Z"
+        }
+      ]
+    },
+    {
+      "name": "valid-date-2026-09-13t16:00:00z",
+      "base": "v02",
+      "valid": true,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "timestamp"
+          ],
+          "value": "2026-09-13t16:00:00z"
+        }
+      ]
+    },
+    {
+      "name": "valid-date-2026-09-13T12:00:00-05:00",
+      "base": "v02",
+      "valid": true,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "timestamp"
+          ],
+          "value": "2026-09-13T12:00:00-05:00"
+        }
+      ]
+    },
+    {
+      "name": "unsupported-version",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "schema_version"
+          ],
+          "value": "9.9"
+        }
+      ]
+    },
+    {
+      "name": "typo-core",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "permission_bais"
+          ],
+          "value": []
+        }
+      ]
+    },
+    {
+      "name": "invalid-source-enum",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "source",
+            "type"
+          ],
+          "value": "magic"
+        }
+      ]
+    },
+    {
+      "name": "none",
+      "base": "v02",
+      "valid": true,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "audit"
+          ],
+          "value": {
+            "state": "none"
+          }
+        }
+      ]
+    },
+    {
+      "name": "none-cannot-have-items",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "audit"
+          ],
+          "value": {
+            "state": "none",
+            "items": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "unknown",
+      "base": "v02",
+      "valid": true,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "audit"
+          ],
+          "value": {
+            "state": "unknown"
+          }
+        }
+      ]
+    },
+    {
+      "name": "unknown-cannot-have-items",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "audit"
+          ],
+          "value": {
+            "state": "unknown",
+            "items": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "withheld",
+      "base": "v02",
+      "valid": true,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "audit"
+          ],
+          "value": {
+            "state": "withheld"
+          }
+        }
+      ]
+    },
+    {
+      "name": "withheld-cannot-have-items",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "audit"
+          ],
+          "value": {
+            "state": "withheld",
+            "items": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "disclosed-must-have-items",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "included_context"
+          ],
+          "value": {
+            "state": "disclosed",
+            "items": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "full-needs-scope",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "coverage"
+          ],
+          "value": {
+            "status": "full"
+          }
+        }
+      ]
+    },
+    {
+      "name": "full-known-empty",
+      "base": "v02",
+      "valid": true,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "coverage"
+          ],
+          "value": {
+            "status": "full",
+            "scope": "Known empty set"
+          }
+        },
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "included_context"
+          ],
+          "value": {
+            "state": "none"
+          }
+        }
+      ]
+    },
+    {
+      "name": "full-with-unknown-included",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "coverage"
+          ],
+          "value": {
+            "status": "full",
+            "scope": "fixture"
+          }
+        },
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "included_context"
+          ],
+          "value": {
+            "state": "unknown"
+          }
+        }
+      ]
+    },
+    {
+      "name": "unknown-coverage-no-scope",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "coverage"
+          ],
+          "value": {
+            "status": "unknown",
+            "scope": "all facts"
+          }
+        }
+      ]
+    },
+    {
+      "name": "partial-stale-summarized",
+      "base": "v02",
+      "valid": true,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "freshness"
+          ],
+          "value": "stale"
+        },
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "transformations"
+          ],
+          "value": {
+            "state": "disclosed",
+            "items": [
+              {
+                "type": "summarized",
+                "description": "Lossy summary"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "duplicate-action-ids",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "challenge_path",
+            "items"
+          ],
+          "value": [
+            {
+              "id": "retrieve_more",
+              "type": "request_more_context",
+              "scope": "Same authorized production support corpora",
+              "authorization": "existing_scope"
+            },
+            {
+              "id": "retrieve_more",
+              "type": "request_more_context",
+              "scope": "Same authorized production support corpora",
+              "authorization": "existing_scope"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "none-is-not-action",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "challenge_path",
+            "items",
+            "0",
+            "type"
+          ],
+          "value": "none"
+        }
+      ]
+    },
+    {
+      "name": "missing-action-authorization",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "remove",
+          "path": [
+            "context_receipt",
+            "challenge_path",
+            "items",
+            "0",
+            "authorization"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "self-parent",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "binding",
+            "parent_receipt_ids"
+          ],
+          "value": [
+            "cr_rag"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "duplicate-parents",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "binding",
+            "parent_receipt_ids"
+          ],
+          "value": [
+            "x",
+            "x"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "valid-extension",
+      "base": "v02",
+      "valid": true,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "extensions"
+          ],
+          "value": {
+            "org.example.metadata": {
+              "illustrative": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "invalid-extension-key",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "extensions"
+          ],
+          "value": {
+            "typo": {}
+          }
+        }
+      ]
+    },
+    {
+      "name": "invalid-legacy-enum",
+      "base": "v01",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "completeness",
+            "status"
+          ],
+          "value": "magic"
+        }
+      ]
+    },
+    {
+      "name": "invalid-legacy-date",
+      "base": "v01",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "timestamp"
+          ],
+          "value": "yesterday"
+        }
+      ]
+    },
+    {
+      "name": "invalid-date-trailing-newline",
+      "base": "v02",
+      "valid": false,
+      "operations": [
+        {
+          "op": "set",
+          "path": [
+            "context_receipt",
+            "timestamp"
+          ],
+          "value": "2026-09-13T16:00:00Z\n"
+        }
+      ]
+    }
+  ]
+}

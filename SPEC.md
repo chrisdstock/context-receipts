@@ -10,7 +10,7 @@ standard, authorization token, proof of truth, or certificate of completeness.
 The [v0.2 JSON Schema](schemas/context-receipt-v0.2.schema.json) defines the wire
 shape. Conforming producers MUST satisfy it and the semantic rules below.
 Consumers MUST enforce date-time formats and MUST reject unsupported versions.
-The Python helper enforces the schema and local identity/action consistency.
+The Python and TypeScript helpers enforce the schema and local identity/action consistency.
 It cannot verify producer honesty, permissions, external references, or full lineage.
 
 The [v0.1 schema](schemas/context-receipt-v0.1.schema.json) remains unchanged.

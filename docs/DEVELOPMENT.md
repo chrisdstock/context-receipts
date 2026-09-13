@@ -64,3 +64,13 @@ now limited to explicit license coverage: CC0 specification materials and MIT co
 The third-party-derived legacy RAG example is excluded pending verified reuse terms;
 the new v0.2 example remains available under CC0. This supersedes the earlier
 license-pending entries in this historical ledger.
+
+The replacement for PR #4 uses the canonical schemas through Ajv 2020-12 and derives
+TypeScript types from generated schema literals. Python and TypeScript run the same
+53 positive/negative fixtures, including format and semantic checks. Node-specific
+tests cover cloning, privacy-safe errors, non-JSON input, immutable schema exports,
+and an isolated packed-consumer smoke check. The package remains private/unpublished.
+No code from PR #4's incomplete handwritten validator was imported.
+
+Final review added a shared trailing-newline timestamp case and tightened Python
+format checking to reject it, matching the TypeScript adapter.
